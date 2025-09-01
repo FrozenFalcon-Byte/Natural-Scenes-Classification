@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-import cv2
+# import cv2
 import tensorflow as tf
 from PIL import Image
 
@@ -61,7 +61,7 @@ st.markdown(""" - Forest - Mountain - Desert - Glacier - Coast """)
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
-    # Layout: Left -> uploader + title | Right -> image & prediction
+    
     col1, col2 = st.columns([1, 1])
 
     with col1:
@@ -70,11 +70,13 @@ if uploaded_file is not None:
         st.image(image, caption="Input Image", use_container_width=True)
 
     with col2:
-        # Preprocessing
+        
         img = np.array(image)
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        img = cv2.resize(img, (150, 150))
-        img = img / 255.0
+        # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        # img = cv2.resize(img, (150, 150))
+        # img = img / 255.0
+        img = image.resize((150, 150)) 
+        img = np.array(img) / 255.0
         img = np.expand_dims(img, axis=0)
 
         # Prediction
