@@ -37,15 +37,4 @@ pip install -r requirements.txt
   - Glacier
   - Mountain
 
----
-
-## 📂 Project Structure
-.
-├── cnn_model.h5 # Trained CNN model
-├── app.py # Streamlit app
-├── requirements.txt # Dependencies
-├── README.md # Project documentation
-
-
----
 
